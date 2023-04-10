@@ -22,15 +22,60 @@
             "y": 300
         },
         {
-            "type": "Image",
-            "id": "db841471-31e7-4eaf-be86-1027f251afe9",
-            "label": "star",
+            "prefabId": "634c0e1b-e1ad-4194-8098-1c16f8101510",
+            "id": "5ad1d243-0923-40c8-96ba-0c08c7ca0ac4",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "platform",
             "components": [],
-            "texture": {
-                "key": "star"
-            },
-            "x": 383,
-            "y": 211
+            "x": -30,
+            "y": 186
+        },
+        {
+            "prefabId": "634c0e1b-e1ad-4194-8098-1c16f8101510",
+            "id": "c484cac5-7817-4c5f-b452-3f3a9fbfcd13",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "platform_1",
+            "components": [],
+            "x": 505,
+            "y": 283
+        },
+        {
+            "prefabId": "634c0e1b-e1ad-4194-8098-1c16f8101510",
+            "id": "f62039dc-1389-420f-acd8-c9b52e4f83d9",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "platform_2",
+            "components": [],
+            "x": 515,
+            "y": 110
+        },
+        {
+            "prefabId": "634c0e1b-e1ad-4194-8098-1c16f8101510",
+            "id": "64d1f280-8829-4497-b105-9a8585575db4",
+            "unlock": [
+                "x",
+                "y",
+                "scaleX",
+                "scaleY",
+                "tintBottomLeft",
+                "tintBottomRight"
+            ],
+            "label": "platformPrefab",
+            "components": [],
+            "x": 0,
+            "y": 536,
+            "scaleX": 2,
+            "scaleY": 2,
+            "tintBottomLeft": "#0a3c10",
+            "tintBottomRight": "#0a3c10"
         }
     ],
     "plainObjects": [],
