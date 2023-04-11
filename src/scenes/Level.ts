@@ -23,46 +23,54 @@ export default class Level extends Phaser.Scene {
 		// sky
 		this.add.image(400, 300, "sky");
 
+		// platformLayer
+		const platformLayer = this.add.layer();
+
 		// platform
-		const platform = new PlatformPrefab(this, -30, 186);
-		this.add.existing(platform);
+		const platform = new PlatformPrefab(this, 600, 400);
+		platform.setOrigin(0.5, 0.5);
+		platformLayer.add(platform);
 
 		// platform_1
-		const platform_1 = new PlatformPrefab(this, 505, 283);
-		this.add.existing(platform_1);
+		const platform_1 = new PlatformPrefab(this, 50, 250);
+		platform_1.setOrigin(0.5, 0.5);
+		platformLayer.add(platform_1);
 
 		// platform_2
-		const platform_2 = new PlatformPrefab(this, 515, 110);
-		this.add.existing(platform_2);
+		const platform_2 = new PlatformPrefab(this, 750, 220);
+		platform_2.setOrigin(0.5, 0.5);
+		platformLayer.add(platform_2);
 
-		// platformPrefab
-		const platformPrefab = new PlatformPrefab(this, 0, 536);
-		this.add.existing(platformPrefab);
-		platformPrefab.scaleX = 2;
-		platformPrefab.scaleY = 2;
-		platformPrefab.tintBottomLeft = 670736;
-		platformPrefab.tintBottomRight = 670736;
+		// bottomPlatgorm
+		const bottomPlatgorm = new PlatformPrefab(this, 400, 568);
+		bottomPlatgorm.scaleX = 2;
+		bottomPlatgorm.scaleY = 2;
+		bottomPlatgorm.setOrigin(0.5, 0.5);
+		bottomPlatgorm.tintBottomLeft = 670736;
+		bottomPlatgorm.tintBottomRight = 670736;
+		platformLayer.add(bottomPlatgorm);
 
 		// player
-		const player = new PlayerPrefab(this, 333, 75);
+		const player = new PlayerPrefab(this, 100, 450);
 		this.add.existing(player);
 
-		// playerPrefab
-		const playerPrefab = new PlayerPrefab(this, 440, 175);
-		this.add.existing(playerPrefab);
+		// lists
+		const platforms = [platform, platform_2, platform_1, bottomPlatgorm];
+
+		// collider
+		this.physics.add.collider(player, platformLayer.list);
 
 		// player (prefab fields)
 		player.autoPlayAnimation = "left";
 
-		// playerPrefab (prefab fields)
-		playerPrefab.autoPlayAnimation = "right";
-
 		this.player = player;
+		this.platforms = platforms;
 
 		this.events.emit("scene-awake");
 	}
 
 	private player!: PlayerPrefab;
+	private platforms!: PlatformPrefab[];
 
 	/* START-USER-CODE */
 

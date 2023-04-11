@@ -22,60 +22,84 @@
             "y": 300
         },
         {
-            "prefabId": "634c0e1b-e1ad-4194-8098-1c16f8101510",
-            "id": "5ad1d243-0923-40c8-96ba-0c08c7ca0ac4",
-            "unlock": [
-                "x",
-                "y"
-            ],
-            "label": "platform",
+            "type": "Layer",
+            "id": "0af3ad50-f0f1-4c84-8bf2-c07efe770178",
+            "label": "platformLayer",
             "components": [],
-            "x": -30,
-            "y": 186
-        },
-        {
-            "prefabId": "634c0e1b-e1ad-4194-8098-1c16f8101510",
-            "id": "c484cac5-7817-4c5f-b452-3f3a9fbfcd13",
-            "unlock": [
-                "x",
-                "y"
-            ],
-            "label": "platform_1",
-            "components": [],
-            "x": 505,
-            "y": 283
-        },
-        {
-            "prefabId": "634c0e1b-e1ad-4194-8098-1c16f8101510",
-            "id": "f62039dc-1389-420f-acd8-c9b52e4f83d9",
-            "unlock": [
-                "x",
-                "y"
-            ],
-            "label": "platform_2",
-            "components": [],
-            "x": 515,
-            "y": 110
-        },
-        {
-            "prefabId": "634c0e1b-e1ad-4194-8098-1c16f8101510",
-            "id": "64d1f280-8829-4497-b105-9a8585575db4",
-            "unlock": [
-                "x",
-                "y",
-                "scaleX",
-                "scaleY",
-                "tintBottomLeft",
-                "tintBottomRight"
-            ],
-            "label": "platformPrefab",
-            "components": [],
-            "x": 0,
-            "y": 536,
-            "scaleX": 2,
-            "scaleY": 2,
-            "tintBottomLeft": "#0a3c10",
-            "tintBottomRight": "#0a3c10"
+            "list": [
+                {
+                    "prefabId": "634c0e1b-e1ad-4194-8098-1c16f8101510",
+                    "id": "5ad1d243-0923-40c8-96ba-0c08c7ca0ac4",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "originX",
+                        "originY"
+                    ],
+                    "label": "platform",
+                    "components": [],
+                    "x": 600,
+                    "y": 400,
+                    "originX": 0.5,
+                    "originY": 0.5
+                },
+                {
+                    "prefabId": "634c0e1b-e1ad-4194-8098-1c16f8101510",
+                    "id": "c484cac5-7817-4c5f-b452-3f3a9fbfcd13",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "originX",
+                        "originY"
+                    ],
+                    "label": "platform_1",
+                    "components": [],
+                    "x": 50,
+                    "y": 250,
+                    "originX": 0.5,
+                    "originY": 0.5
+                },
+                {
+                    "prefabId": "634c0e1b-e1ad-4194-8098-1c16f8101510",
+                    "id": "f62039dc-1389-420f-acd8-c9b52e4f83d9",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "originX",
+                        "originY"
+                    ],
+                    "label": "platform_2",
+                    "components": [],
+                    "x": 750,
+                    "y": 220,
+                    "originX": 0.5,
+                    "originY": 0.5
+                },
+                {
+                    "prefabId": "634c0e1b-e1ad-4194-8098-1c16f8101510",
+                    "id": "64d1f280-8829-4497-b105-9a8585575db4",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY",
+                        "tintBottomLeft",
+                        "tintBottomRight",
+                        "originX",
+                        "originY"
+                    ],
+                    "label": "bottomPlatgorm",
+                    "components": [],
+                    "x": 400,
+                    "y": 568,
+                    "scaleX": 2,
+                    "scaleY": 2,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "tintBottomLeft": "#0a3c10",
+                    "tintBottomRight": "#0a3c10"
+                }
+            ]
         },
         {
             "prefabId": "173caff0-784c-49d0-82b5-a95af6b79e7b",
@@ -89,29 +113,36 @@
             "scope": "CLASS",
             "autoPlayAnimation": "left",
             "components": [],
-            "x": 333,
-            "y": 75
-        },
-        {
-            "prefabId": "173caff0-784c-49d0-82b5-a95af6b79e7b",
-            "id": "accd7ccd-fed7-4120-9788-b10cf852a7df",
-            "unlock": [
-                "x",
-                "y",
-                "autoPlayAnimation"
-            ],
-            "label": "playerPrefab",
-            "autoPlayAnimation": "right",
-            "components": [],
-            "x": 440,
-            "y": 175
+            "x": 100,
+            "y": 450
         }
     ],
-    "plainObjects": [],
+    "plainObjects": [
+        {
+            "id": "00167b67-aee7-49a1-8def-75b9bb4c1134",
+            "type": "Collider",
+            "label": "collider",
+            "scope": "METHOD",
+            "object1": "player",
+            "object2": "platformLayer.list"
+        }
+    ],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 3
-    }
+    },
+    "lists": [
+        {
+            "id": "7389329e-e430-438c-9bb7-a084f7a37e9b",
+            "label": "platforms",
+            "objectIds": [
+                "5ad1d243-0923-40c8-96ba-0c08c7ca0ac4",
+                "f62039dc-1389-420f-acd8-c9b52e4f83d9",
+                "c484cac5-7817-4c5f-b452-3f3a9fbfcd13",
+                "64d1f280-8829-4497-b105-9a8585575db4"
+            ]
+        }
+    ]
 }
