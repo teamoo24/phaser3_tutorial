@@ -1,5 +1,5 @@
 {
-    "id": "b082c3a9-fc12-4b4d-9218-44658c31064d",
+    "id": "173caff0-784c-49d0-82b5-a95af6b79e7b",
     "sceneType": "PREFAB",
     "settings": {
         "exportClass": true,
@@ -11,16 +11,16 @@
     },
     "displayList": [
         {
-            "type": "ArcadeImage",
-            "id": "5e569da0-d6bc-48b1-935d-025a25a73ab9",
-            "label": "player",
+            "type": "ArcadeSprite",
+            "id": "140f2f05-e00f-400b-8a55-c674d8aaefb4",
+            "label": "dude0",
             "components": [],
             "texture": {
                 "key": "dude",
                 "frame": 0
             },
-            "x": 65,
-            "y": 52,
+            "x": 19,
+            "y": 25,
             "body.bounce.x": 0.2,
             "body.bounce.y": 0.2,
             "collideWorldBounds": true,
@@ -37,10 +37,10 @@
     },
     "prefabProperties": [
         {
-            "name": "property1",
-            "label": "Property 1",
-            "tooltip": "Property 1",
-            "defValue": "",
+            "name": "autoPlayAnimation",
+            "label": "Auto Play Animation",
+            "tooltip": "The animation to play first",
+            "defValue": "turn",
             "customDefinition": false,
             "type": {
                 "id": "animation-key"

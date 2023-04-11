@@ -76,6 +76,35 @@
             "scaleY": 2,
             "tintBottomLeft": "#0a3c10",
             "tintBottomRight": "#0a3c10"
+        },
+        {
+            "prefabId": "173caff0-784c-49d0-82b5-a95af6b79e7b",
+            "id": "1971e8d2-55c2-4189-b913-28c9a0d753ff",
+            "unlock": [
+                "x",
+                "y",
+                "autoPlayAnimation"
+            ],
+            "label": "player",
+            "scope": "CLASS",
+            "autoPlayAnimation": "left",
+            "components": [],
+            "x": 333,
+            "y": 75
+        },
+        {
+            "prefabId": "173caff0-784c-49d0-82b5-a95af6b79e7b",
+            "id": "accd7ccd-fed7-4120-9788-b10cf852a7df",
+            "unlock": [
+                "x",
+                "y",
+                "autoPlayAnimation"
+            ],
+            "label": "playerPrefab",
+            "autoPlayAnimation": "right",
+            "components": [],
+            "x": 440,
+            "y": 175
         }
     ],
     "plainObjects": [],

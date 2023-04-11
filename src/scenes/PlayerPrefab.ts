@@ -7,31 +7,38 @@ import Phaser from "phaser";
 /* END-USER-IMPORTS */
 
 export default interface PlayerPrefab {
-
-	 body: Phaser.Physics.Arcade.Body;
+  body: Phaser.Physics.Arcade.Body;
 }
 
-export default class PlayerPrefab extends Phaser.Physics.Arcade.Image {
+export default class PlayerPrefab extends Phaser.Physics.Arcade.Sprite {
+  constructor(
+    scene: Phaser.Scene,
+    x?: number,
+    y?: number,
+    texture?: string,
+    frame?: number | string
+  ) {
+    super(scene, x ?? 19, y ?? 25, texture || "dude", frame ?? 0);
 
-	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
-		super(scene, x ?? 65, y ?? 52, texture || "dude", frame ?? 0);
+    scene.physics.add.existing(this, false);
+    this.body.bounce.x = 0.2;
+    this.body.bounce.y = 0.2;
+    this.body.collideWorldBounds = true;
+    this.body.setSize(32, 48, false);
 
-		scene.physics.add.existing(this, false);
-		this.body.bounce.x = 0.2;
-		this.body.bounce.y = 0.2;
-		this.body.collideWorldBounds = true;
-		this.body.setSize(32, 48, false);
-
-		/* START-USER-CTR-CODE */
-    this.scene.events.once("scene-awake", () => this.awake());
+    /* START-USER-CTR-CODE */
+    this.scene.events.once("scene-awake", () => {
+      this.awake();
+    });
     /* END-USER-CTR-CODE */
-	}
+  }
 
-	public property1: string = "";
+  public autoPlayAnimation: string = "turn";
 
-	/* START-USER-CODE */
+  /* START-USER-CODE */
+
   awake() {
-    this.play("left");
+    this.play(this.autoPlayAnimation);
   }
 
   /* END-USER-CODE */
