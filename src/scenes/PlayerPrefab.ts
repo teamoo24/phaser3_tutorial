@@ -3,6 +3,7 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
+import { ANIM_LEFT, ANIM_RIGHT, ANIM_TURN } from "./animations";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -40,7 +41,24 @@ export default class PlayerPrefab extends Phaser.Physics.Arcade.Sprite {
   awake() {
     this.play(this.autoPlayAnimation);
   }
-
+  moveleft() {
+    //left
+    this.setVelocityX(-160);
+    this.play(ANIM_LEFT, true);
+  }
+  moveright() {
+    //right
+    this.setVelocityX(160);
+    this.play(ANIM_RIGHT, true);
+  }
+  stopMoving() {
+    //stop moving
+    this.setVelocityX(0);
+    this.play(ANIM_TURN, true);
+  }
+  jump() {
+    this.setVelocityY(-330);
+  }
   /* END-USER-CODE */
 }
 

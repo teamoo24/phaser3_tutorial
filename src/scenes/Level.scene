@@ -115,16 +115,193 @@
             "components": [],
             "x": 100,
             "y": 450
+        },
+        {
+            "type": "Layer",
+            "id": "9986d39a-3233-4ee6-ab0a-935f5263bb40",
+            "label": "starsLayer",
+            "components": [],
+            "list": [
+                {
+                    "prefabId": "b2a2da66-ba14-42ec-9c38-ccefd83c6c87",
+                    "id": "a4def0b1-10d5-47d0-a3b1-18581c5b4e08",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "star",
+                    "components": [],
+                    "x": 49,
+                    "y": -15
+                },
+                {
+                    "prefabId": "b2a2da66-ba14-42ec-9c38-ccefd83c6c87",
+                    "id": "0a4f4492-3d55-4de2-b3d6-206286263e16",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "star_1",
+                    "components": [],
+                    "x": 739,
+                    "y": -15
+                },
+                {
+                    "prefabId": "b2a2da66-ba14-42ec-9c38-ccefd83c6c87",
+                    "id": "efa5077e-2918-463e-8d2b-01fb096c0fb5",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "star_2",
+                    "components": [],
+                    "x": 670,
+                    "y": -15
+                },
+                {
+                    "prefabId": "b2a2da66-ba14-42ec-9c38-ccefd83c6c87",
+                    "id": "9af32b18-3db2-4c94-b91f-0b326fe3f732",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "star_3",
+                    "components": [],
+                    "x": 325,
+                    "y": -15
+                },
+                {
+                    "prefabId": "b2a2da66-ba14-42ec-9c38-ccefd83c6c87",
+                    "id": "b0953f02-ec9a-40ef-ac7e-357c68ddadb4",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "star_4",
+                    "components": [],
+                    "x": 601,
+                    "y": -15
+                },
+                {
+                    "prefabId": "b2a2da66-ba14-42ec-9c38-ccefd83c6c87",
+                    "id": "38ccdd67-1b2d-4acb-a0d9-da0750a33c92",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "star_5",
+                    "components": [],
+                    "x": 532,
+                    "y": -15
+                },
+                {
+                    "prefabId": "b2a2da66-ba14-42ec-9c38-ccefd83c6c87",
+                    "id": "c4db384e-a7a5-4ff7-bd38-20d69c3ff9f2",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "star_6",
+                    "components": [],
+                    "x": 463,
+                    "y": -15
+                },
+                {
+                    "prefabId": "b2a2da66-ba14-42ec-9c38-ccefd83c6c87",
+                    "id": "2187ab73-12f1-4e93-8b3f-303f844a71fe",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "star_7",
+                    "components": [],
+                    "x": 394,
+                    "y": -15
+                },
+                {
+                    "prefabId": "b2a2da66-ba14-42ec-9c38-ccefd83c6c87",
+                    "id": "777ae5c9-deef-4090-ac2f-7ceb9dde6825",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "star_8",
+                    "components": [],
+                    "x": 256,
+                    "y": -15
+                },
+                {
+                    "prefabId": "b2a2da66-ba14-42ec-9c38-ccefd83c6c87",
+                    "id": "84c88e19-1a75-4277-85d7-dd19cfd7c432",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "star_9",
+                    "components": [],
+                    "x": 187,
+                    "y": -15
+                },
+                {
+                    "prefabId": "b2a2da66-ba14-42ec-9c38-ccefd83c6c87",
+                    "id": "0778300f-2483-4095-8260-b15b2d732267",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "star_10",
+                    "components": [],
+                    "x": 118,
+                    "y": -15
+                }
+            ]
         }
     ],
     "plainObjects": [
         {
             "id": "00167b67-aee7-49a1-8def-75b9bb4c1134",
             "type": "Collider",
-            "label": "collider",
+            "label": "player_platforms_collider",
             "scope": "METHOD",
             "object1": "player",
             "object2": "platformLayer.list"
+        },
+        {
+            "id": "847bcec2-584e-4406-a3b4-d8d414f6eaf0",
+            "type": "Keyboard.Key",
+            "label": "leftKey",
+            "keyCode": "LEFT"
+        },
+        {
+            "id": "8576be69-1f8a-4c01-a36b-c2e738124963",
+            "type": "Keyboard.Key",
+            "label": "rightKey",
+            "keyCode": "RIGHT"
+        },
+        {
+            "id": "805af91f-502f-49c5-9b7b-6b55b80499cb",
+            "type": "Keyboard.Key",
+            "label": "upKey",
+            "keyCode": "UP"
+        },
+        {
+            "id": "a0ddabcf-87a4-418c-b516-ef1a306488f4",
+            "type": "Collider",
+            "label": "stars_platforms_collider",
+            "scope": "METHOD",
+            "object1": "starsLayer.list",
+            "object2": "platformLayer.list"
+        },
+        {
+            "id": "6e75d5eb-6007-4e0f-ae8e-661c3c70596e",
+            "type": "Collider",
+            "label": "player_stars_collider",
+            "scope": "METHOD",
+            "object1": "player",
+            "object2": "starsLayer.list",
+            "overlapOnly": true,
+            "collideCallback": "this.collectStar as any",
+            "callbackContext": "this"
         }
     ],
     "meta": {
