@@ -120,6 +120,7 @@
             "type": "Layer",
             "id": "9986d39a-3233-4ee6-ab0a-935f5263bb40",
             "label": "starsLayer",
+            "scope": "CLASS",
             "components": [],
             "list": [
                 {

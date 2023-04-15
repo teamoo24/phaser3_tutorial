@@ -36,6 +36,10 @@ export default class StarPrefab extends Phaser.Physics.Arcade.Image {
     this.disableBody(true, true);
   }
 
+  resetStar() {
+    this.enableBody(true, this.x, 0, true, true);
+  }
+
   /* END-USER-CODE */
 }
 

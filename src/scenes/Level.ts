@@ -140,6 +140,7 @@ export default class Level extends Phaser.Scene {
     player.autoPlayAnimation = "left";
 
     this.player = player;
+    this.starsLayer = starsLayer;
     this.scoreText = scoreText;
     this.leftKey = leftKey;
     this.rightKey = rightKey;
@@ -150,6 +151,7 @@ export default class Level extends Phaser.Scene {
   }
 
   private player!: PlayerPrefab;
+  private starsLayer!: Phaser.GameObjects.Layer;
   private scoreText!: scorePrefab;
   private leftKey!: Phaser.Input.Keyboard.Key;
   private rightKey!: Phaser.Input.Keyboard.Key;
@@ -167,6 +169,23 @@ export default class Level extends Phaser.Scene {
   private collectStar(player: PlayerPrefab, star: StarPrefab) {
     star.collected();
     this.scoreText.addScore(10);
+
+    if (this.noStarActive()) {
+      for (const obj of this.starsLayer.list) {
+        const star = obj as StarPrefab;
+
+        star.resetStar();
+      }
+    }
+  }
+
+  private noStarActive() {
+    for (const star of this.starsLayer.list) {
+      if (star.active) {
+        return false;
+      }
+    }
+    return true;
   }
 
   update() {
