@@ -6,6 +6,7 @@ import Phaser from "phaser";
 import PlatformPrefab from "./PlatformPrefab";
 import PlayerPrefab from "./PlayerPrefab";
 import StarPrefab from "./StarPrefab";
+import scorePrefab from "./scorePrefab";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -113,6 +114,10 @@ export default class Level extends Phaser.Scene {
     const star_10 = new StarPrefab(this, 118, -15);
     starsLayer.add(star_10);
 
+    // scoreText
+    const scoreText = new scorePrefab(this, 16, 16);
+    this.add.existing(scoreText);
+
     // lists
     const platforms = [platform, platform_2, platform_1, bottomPlatgorm];
 
@@ -135,6 +140,7 @@ export default class Level extends Phaser.Scene {
     player.autoPlayAnimation = "left";
 
     this.player = player;
+    this.scoreText = scoreText;
     this.leftKey = leftKey;
     this.rightKey = rightKey;
     this.upKey = upKey;
@@ -144,6 +150,7 @@ export default class Level extends Phaser.Scene {
   }
 
   private player!: PlayerPrefab;
+  private scoreText!: scorePrefab;
   private leftKey!: Phaser.Input.Keyboard.Key;
   private rightKey!: Phaser.Input.Keyboard.Key;
   private upKey!: Phaser.Input.Keyboard.Key;
@@ -159,6 +166,7 @@ export default class Level extends Phaser.Scene {
 
   private collectStar(player: PlayerPrefab, star: StarPrefab) {
     star.collected();
+    this.scoreText.addScore(10);
   }
 
   update() {

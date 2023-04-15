@@ -255,6 +255,19 @@
                     "y": -15
                 }
             ]
+        },
+        {
+            "prefabId": "a58956ad-0d59-425f-beb6-8af7f5e5ecfa",
+            "id": "8bf1b878-de71-412b-a64e-ee79dbe41b60",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "scoreText",
+            "scope": "CLASS",
+            "components": [],
+            "x": 16,
+            "y": 16
         }
     ],
     "plainObjects": [
