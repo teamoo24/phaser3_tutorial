@@ -332,6 +332,16 @@
             "scope": "METHOD",
             "object1": "bombsLayer.list",
             "object2": "platformLayer.list"
+        },
+        {
+            "id": "9feed91b-e542-48ae-8ed7-f4b97555ae7b",
+            "type": "Collider",
+            "label": "collider",
+            "scope": "METHOD",
+            "object1": "player",
+            "object2": "bombsLayer.list",
+            "collideCallback": "this.hitBomb as any",
+            "callbackContext": "this"
         }
     ],
     "meta": {

@@ -59,6 +59,11 @@ export default class PlayerPrefab extends Phaser.Physics.Arcade.Sprite {
   jump() {
     this.setVelocityY(-330);
   }
+
+  die() {
+    this.setTint(0xff0000);
+    this.play(ANIM_TURN);
+  }
   /* END-USER-CODE */
 }
 

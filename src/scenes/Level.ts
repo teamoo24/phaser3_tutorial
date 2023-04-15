@@ -143,6 +143,15 @@ export default class Level extends Phaser.Scene {
     // bombs_platforms_collider
     this.physics.add.collider(bombsLayer.list, platformLayer.list);
 
+    // collider
+    this.physics.add.collider(
+      player,
+      bombsLayer.list,
+      this.hitBomb as any,
+      undefined,
+      this
+    );
+
     // player (prefab fields)
     player.autoPlayAnimation = "left";
 
@@ -171,6 +180,8 @@ export default class Level extends Phaser.Scene {
 
   // Write your code here
 
+  private gameOver = false;
+
   create() {
     this.editorCreate();
   }
@@ -188,7 +199,12 @@ export default class Level extends Phaser.Scene {
       }
 
       //spawn a bomb
-      const bomb = new BombPrefab(this);
+      var bombX =
+        this.player.x < 400
+          ? Phaser.Math.Between(400, 800)
+          : Phaser.Math.Between(0, 400);
+
+      const bomb = new BombPrefab(this, bombX, 0);
       this.bombsLayer.add(bomb);
     }
   }
@@ -202,7 +218,17 @@ export default class Level extends Phaser.Scene {
     return true;
   }
 
+  private hitBomb(player: PlayerPrefab, Bomb: BombPrefab) {
+    this.physics.pause();
+    player.die();
+
+    this.gameOver = true;
+  }
+  //
   update() {
+    if (this.gameOver) {
+      return;
+    }
     this.updatePlayer();
   }
 
