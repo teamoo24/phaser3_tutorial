@@ -258,6 +258,14 @@
             ]
         },
         {
+            "type": "Layer",
+            "id": "ebebad83-d233-49c7-bb85-bda7fc021b67",
+            "label": "bombsLayer",
+            "scope": "CLASS",
+            "components": [],
+            "list": []
+        },
+        {
             "prefabId": "a58956ad-0d59-425f-beb6-8af7f5e5ecfa",
             "id": "8bf1b878-de71-412b-a64e-ee79dbe41b60",
             "unlock": [
@@ -316,6 +324,14 @@
             "overlapOnly": true,
             "collideCallback": "this.collectStar as any",
             "callbackContext": "this"
+        },
+        {
+            "id": "a99cfb04-d2c4-4d68-b423-37b3f2eee52b",
+            "type": "Collider",
+            "label": "bombs_platforms_collider",
+            "scope": "METHOD",
+            "object1": "bombsLayer.list",
+            "object2": "platformLayer.list"
         }
     ],
     "meta": {

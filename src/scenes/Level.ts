@@ -8,6 +8,7 @@ import PlayerPrefab from "./PlayerPrefab";
 import StarPrefab from "./StarPrefab";
 import scorePrefab from "./scorePrefab";
 /* START-USER-IMPORTS */
+import BombPrefab from "./BombPrefab";
 /* END-USER-IMPORTS */
 
 export default class Level extends Phaser.Scene {
@@ -114,6 +115,9 @@ export default class Level extends Phaser.Scene {
     const star_10 = new StarPrefab(this, 118, -15);
     starsLayer.add(star_10);
 
+    // bombsLayer
+    const bombsLayer = this.add.layer();
+
     // scoreText
     const scoreText = new scorePrefab(this, 16, 16);
     this.add.existing(scoreText);
@@ -136,11 +140,15 @@ export default class Level extends Phaser.Scene {
       this
     );
 
+    // bombs_platforms_collider
+    this.physics.add.collider(bombsLayer.list, platformLayer.list);
+
     // player (prefab fields)
     player.autoPlayAnimation = "left";
 
     this.player = player;
     this.starsLayer = starsLayer;
+    this.bombsLayer = bombsLayer;
     this.scoreText = scoreText;
     this.leftKey = leftKey;
     this.rightKey = rightKey;
@@ -152,6 +160,7 @@ export default class Level extends Phaser.Scene {
 
   private player!: PlayerPrefab;
   private starsLayer!: Phaser.GameObjects.Layer;
+  private bombsLayer!: Phaser.GameObjects.Layer;
   private scoreText!: scorePrefab;
   private leftKey!: Phaser.Input.Keyboard.Key;
   private rightKey!: Phaser.Input.Keyboard.Key;
@@ -170,12 +179,17 @@ export default class Level extends Phaser.Scene {
     star.collected();
     this.scoreText.addScore(10);
 
+    // spawn the star agiain
     if (this.noStarActive()) {
       for (const obj of this.starsLayer.list) {
         const star = obj as StarPrefab;
 
         star.resetStar();
       }
+
+      //spawn a bomb
+      const bomb = new BombPrefab(this);
+      this.bombsLayer.add(bomb);
     }
   }
 
